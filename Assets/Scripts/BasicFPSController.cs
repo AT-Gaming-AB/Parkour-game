@@ -18,8 +18,7 @@ public class BasicFPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    [HideInInspector]
-    public bool canMove = true;
+    [HideInInspector] public bool canMove = true;
     float jumpsInAir = 1;
 
     void Start()
