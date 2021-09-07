@@ -8,6 +8,8 @@ TagManager:
   - port2
   - port3
   - port4
+  - wall
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Player Body
   - Ground
-  - 
+  - Wall
   - 
   - 
   - 

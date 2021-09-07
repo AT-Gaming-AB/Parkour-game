@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float gravity = -9.82f;
     public float jumpHeight = 3f;
-    public float normalHeight = 3.2f;
+    public float normalHeight = 3.6f;
     private float jumpHeightOnWall = 2f;
     [HideInInspector] public float AirJumpsReamaining;
     public float JumpsInAir = 1;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask Walls;
     public LayerMask climableWalls;
 
+    
     public Vector3 velocity;
     bool isGrounded;
     private Animator animator;
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         // animator = camera.GetComponent<Animator>();
-        animator = gun.GetComponent<Animator>();
+        // animator = gun.GetComponent<Animator>();
         timer = MaxTimeOnWall;
         restart = FindObjectOfType<Restart>();
     }
@@ -65,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
             controller.detectCollisions = false;
             Vector3 movexy = transform.right * x + transform.forward * z;
 
-            float space = Input.GetAxis("Jump");
             if (Input.GetKey(KeyCode.Space))
             {
                 movexy.y += 50 * Time.deltaTime;
@@ -103,9 +103,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-            AirJumpsReamaining = JumpsInAir;
+            AirJumpsReamaining = JumpsInAir+1;
         }
-        weaponSideAnim(x);
+        // weaponSideAnim(x);
 
         Vector3 move = transform.right * x + transform.forward * z;
 
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (jump && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            AirJumpsReamaining = JumpsInAir;
+            AirJumpsReamaining = JumpsInAir+1;
         }
         else if (jump && !isGrounded && AirJumpsReamaining >= 1)
         {
@@ -266,9 +266,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f || !animator.GetCurrentAnimatorStateInfo(0).IsName("Recoil") ) {
-            animator.Play(wichanim);
-        }
+        // if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f || !animator.GetCurrentAnimatorStateInfo(0).IsName("Recoil") ) {
+        //     animator.Play(wichanim);
+        // }
     }
     // public void climLedge() 
     // {
