@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (godmode == true)
         {
             controller.detectCollisions = false;
-            Vector3 movexy = transform.right * x + transform.forward * z;
+            Vector3 movexy = Vector3.Normalize(transform.right * x + transform.forward * z);
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-            AirJumpsReamaining = JumpsInAir+1;
+            AirJumpsReamaining = JumpsInAir;
         }
         // weaponSideAnim(x);
 
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (jump && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            AirJumpsReamaining = JumpsInAir+1;
+            AirJumpsReamaining = JumpsInAir;
         }
         else if (jump && !isGrounded && AirJumpsReamaining >= 1)
         {

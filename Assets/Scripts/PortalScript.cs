@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal_1 : MonoBehaviour
+public class PortalScript : MonoBehaviour
 {
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "port1")
@@ -22,7 +16,7 @@ public class Portal_1 : MonoBehaviour
         }
         else if (col.tag == "port3")
         {
-            Debug.Log("Port3");   
+            Debug.Log("Port3");
         }
         else if (col.tag == "port4")
         {
