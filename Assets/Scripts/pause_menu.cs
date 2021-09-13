@@ -34,7 +34,7 @@ public class pause_menu : MonoBehaviour
     void PauseGame ()
     {
         pause.SetActive(true);
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
         playerScript.canMove = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -43,7 +43,7 @@ public class pause_menu : MonoBehaviour
     void ResumeGame ()
     {
         pause.SetActive(false);
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
         playerScript.canMove = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
