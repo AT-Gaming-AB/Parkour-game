@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 2484155099366671801}
   - component: {fileID: 2484155099366671806}
   - component: {fileID: 8606353094084789173}
+  - component: {fileID: 2567859715305807066}
   m_Layer: 6
   m_Name: FPP customized
   m_TagString: Player
@@ -329,6 +330,18 @@ MonoBehaviour:
   camera: {fileID: 2484155098670684086}
   gun: {fileID: 0}
   wichanim: 
+--- !u!114 &2567859715305807066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484155099366671807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de53865c0a386804da764305efeb230d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2484155099730525565
 GameObject:
   m_ObjectHideFlags: 0
