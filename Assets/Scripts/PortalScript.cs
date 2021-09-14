@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PortalScript : MonoBehaviour
     {
         if (col.tag == "port1")
         {
-            Debug.Log("Port1");   
+            Debug.Log("Port1");
+            SceneManager.LoadScene(1);
         }
         else if (col.tag == "port2")
         {
