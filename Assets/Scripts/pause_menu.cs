@@ -47,6 +47,8 @@ public class pause_menu : MonoBehaviour
         playerScript.canMove = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        settingsmenu.SetActive(false);
+        mainmenu.SetActive(true);
     }
     public void quitGame(){
         Application.Quit();
