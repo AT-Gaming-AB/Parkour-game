@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     float timer;
     float MaxTimeOnWall = 1.4f;
-    public Camera camera;
+    public Camera camerak;
     public GameObject gun;
     private float walljumpTimer;
     private float wallvelTimer;
@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
                 if (timer <0) {
                     velocity.y = -10f;
                     timer = 0;
-                    camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    camerak.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 } else {
                     //Checking if time since startup is bigger than (itself + float)
                     if ((Time.realtimeSinceStartup > walljumpTimer) && jump && Input.GetKey(KeyCode.W))
@@ -188,10 +188,10 @@ public class PlayerMovement : MonoBehaviour
                             velocity.y = -1f;
                             // Debug.Log("not groundBelow");
                             if (rightSide) {
-                                camera.transform.localRotation = Quaternion.Euler(0, 0, 15);
+                                camerak.transform.localRotation = Quaternion.Euler(0, 0, 15);
                             }
                             else if (leftSide) {
-                                camera.transform.localRotation = Quaternion.Euler(0,0,-15);
+                                camerak.transform.localRotation = Quaternion.Euler(0,0,-15);
                             }   
                         }
                     }
@@ -201,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else {
                 timer = MaxTimeOnWall;
-                camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                camerak.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
 
             //Checking if C is pressed while running
@@ -241,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
         // if Walking...
         if (isWalking)
         {
-            camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            camerak.transform.localRotation = Quaternion.Euler(0, 0, 0);
             timer = MaxTimeOnWall;
             
             wichanim = "Base Layer.empty";

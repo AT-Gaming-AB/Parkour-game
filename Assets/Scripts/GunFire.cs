@@ -1,107 +1,88 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GunFire : MonoBehaviour
 {
-    PlayerMovement playerMovementScript;
-    public static GunFire instance2;
     RaycastHit hit;
-
-    //Used to damage enemy
-    [SerializeField] float damageEnemy = 55f;
-
+    private bool Raycast;
     [SerializeField] Transform shootPoint;
-
-    [SerializeField] int currentAmmo;
-
-    [SerializeField] float rateOffFire;
+    public ParticleSystem muzzleflash;
     float nextFire = 0;
-
-    [SerializeField] float weaponRange;
-    public GameObject EnemyPrefab;
-    public GameObject Bullet;
-    public Camera playerCamera;
-    [HideInInspector] public bool Raycast;
-    public Transform BulletShootHole;
+    public AudioSource gunShot;
+    public AudioSource gunEmpty;
+    public AudioSource Reload;
     private Animator animator;
-    // public ParticleSystem particleSystem;
-    //bool withChildren = true;
+    public GameObject BulletHolePrefab;
+    public TextMeshProUGUI ammoText;
+    public float ammoCount = 12;
+    private float currentAmmo;
+    public float firerate = 0.5f;
 
+    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        playerMovementScript = FindObjectOfType<PlayerMovement>();
-        GameObject enemyObject = Instantiate (EnemyPrefab);
-        enemyObject.transform.position = new Vector3(0,2,-30);
-        if(instance2 == null)
-        {
-            instance2 = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        currentAmmo = ammoCount;
+        ammoText.text = "ammo: " + ammoCount; 
     }
+
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && currentAmmo > 0)
+        if (Input.GetButton("Fire1"))
         {
             Shoot();
         }
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetKey(KeyCode.R) & currentAmmo != ammoCount)
         {
-            SpawnCapsule();
+            currentAmmo = ammoCount;
+            nextFire = Time.time + 1f;
+            ammoText.text = "ammo: " + currentAmmo; 
+            animator.Play("Base Layer.Reload");
+            Reload.Play();
+            Invoke("StopAudio", 0.5f);
         }
-    }
-    public void SpawnCapsule()
-    {
-        GameObject enemyObject = Instantiate (EnemyPrefab);
-        enemyObject.transform.position = new Vector3(Random.Range(-5.0f, 5.0f),2,-30);
     }
 
     public void Shoot()
     {
-        if(Time.time > nextFire)
+        if (Time.time > nextFire & currentAmmo > 0)
         {
-            animator.Play("Base Layer.Recoil");
-            
-            nextFire = Time.time + rateOffFire;
-
             currentAmmo--;
-
-            // Shoot Bullet
-            GameObject bulletObject = Instantiate(Bullet);
-            bulletObject.transform.position = BulletShootHole.transform.position + transform.forward;
-            bulletObject.transform.forward = playerCamera.transform.forward;
-
+            ammoText.text = "ammo: " + currentAmmo; 
+            nextFire = Time.time + firerate;
+            muzzleflash.Play();
+            gunShot.Play();
+            animator.Play("Base Layer.Recoil");
             // Shoot RayCast
-            Raycast = Physics.Raycast(shootPoint.position, shootPoint.forward, out hit, weaponRange);
+            Raycast = Physics.Raycast(shootPoint.position, shootPoint.forward, out hit, 50f);
             if(Raycast)
             {
+                GameObject newHole = Instantiate(BulletHolePrefab, hit.point + hit.normal * 0.001f, Quaternion.identity) as GameObject;
+                newHole.transform.LookAt(hit.point + hit.normal);
+                Destroy(newHole, 5f);
                 if(hit.transform.tag == "Enemy")
                 {
                     Debug.Log("Enemy Hit");
-                    EnemyHeath enemyHealthScript = hit.transform.GetComponent<EnemyHeath>();
-                    enemyHealthScript.DeductHealth(damageEnemy);
+                    // EnemyHeath enemyHealthScript = hit.transform.GetComponent<EnemyHeath>();
+                    // enemyHealthScript.DeductHealth(damageEnemy);
                 }
                 else
                 {
                     Debug.Log("Hit other");
                 }
             }
-
-            // particleSystem.Play(withChildren);
+        }
+        else if (Time.time > nextFire & currentAmmo == 0)
+        {
+            nextFire = Time.time + firerate;
+            gunEmpty.Play();
         }
     }
-    // void shootBullet()
-    // {
-    //     if(Time.time > nextFire) {
-    //         nextFire = Time.time + rateOffFire;
-            
-    //         GameObject bulletObject = Instantiate(Bullet);
-    //         bulletObject.transform.position = BulletShootHole.transform.position + transform.forward;
-    //         bulletObject.transform.forward = playerCamera.transform.forward;
-    //     }
-    // }
+    private void StopAudio()
+    {
+        Reload.Stop();
+    }
 }
