@@ -6,7 +6,7 @@ public class pause_menu : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
     public GameObject thePlayer;
-    BasicFPSController playerScript;
+    PlayerMovement playerScript;
     public GameObject settingsmenu;
     public GameObject mainmenu;
     public AudioSource music;
@@ -14,13 +14,13 @@ public class pause_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = thePlayer.GetComponent<BasicFPSController>();
+        playerScript = thePlayer.GetComponent<PlayerMovement>();
         pause.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (Time.timeScale == 1)
             {
@@ -35,7 +35,7 @@ public class pause_menu : MonoBehaviour
     {
         pause.SetActive(true);
         Time.timeScale = 0;
-        playerScript.canMove = false;
+        // playerScript.canMove = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -44,7 +44,7 @@ public class pause_menu : MonoBehaviour
     {
         pause.SetActive(false);
         Time.timeScale = 1;
-        playerScript.canMove = true;
+        // playerScript.canMove = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         settingsmenu.SetActive(false);
