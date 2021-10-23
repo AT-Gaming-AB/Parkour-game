@@ -7,15 +7,20 @@ public class pause_menu : MonoBehaviour
     [SerializeField] private GameObject pause;
     public GameObject thePlayer;
     PlayerMovement playerScript;
+    public GameObject gun;
+    GunFire gunScript;
     public GameObject settingsmenu;
     public GameObject mainmenu;
     public AudioSource music;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         playerScript = thePlayer.GetComponent<PlayerMovement>();
         pause.SetActive(false);
+        gunScript = gun.GetComponent<GunFire>();
+        gunScript.gamePaused = false;
     }
     // Update is called once per frame
     void Update()
@@ -34,15 +39,18 @@ public class pause_menu : MonoBehaviour
     void PauseGame ()
     {
         pause.SetActive(true);
+        gunScript.gamePaused = true;
         Time.timeScale = 0;
         // playerScript.canMove = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        
     }
 
     public void ResumeGame ()
     {
         pause.SetActive(false);
+        gunScript.gamePaused = false;
         Time.timeScale = 1;
         // playerScript.canMove = true;
         Cursor.visible = false;

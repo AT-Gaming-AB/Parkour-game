@@ -15,11 +15,9 @@ public class pickup : MonoBehaviour
   
      IEnumerator LateCall(float seconds)
      {
-        //  gameObject.SetActive(true);
-         yield return new WaitForSeconds(seconds);
-  
-         text.SetActive(false);
-         //Do Function here...
+        yield return new WaitForSeconds(seconds);
+
+        text.SetActive(false);
      }
     void OnTriggerEnter(Collider coll)
     {

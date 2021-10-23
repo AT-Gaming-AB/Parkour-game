@@ -19,6 +19,8 @@ public class GunFire : MonoBehaviour
     public float ammoCount = 12;
     private float currentAmmo;
     public float firerate = 0.5f;
+    public float damageEnemy = 40f;
+    [HideInInspector] public bool gamePaused;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +33,11 @@ public class GunFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && !gamePaused)
         {
             Shoot();
         }
-        if (Input.GetKey(KeyCode.R) & currentAmmo != ammoCount)
+        if (Input.GetKey(KeyCode.R) & currentAmmo != ammoCount && !gamePaused)
         {
             currentAmmo = ammoCount;
             nextFire = Time.time + 1f;
@@ -66,8 +68,8 @@ public class GunFire : MonoBehaviour
                 if(hit.transform.tag == "Enemy")
                 {
                     Debug.Log("Enemy Hit");
-                    // EnemyHeath enemyHealthScript = hit.transform.GetComponent<EnemyHeath>();
-                    // enemyHealthScript.DeductHealth(damageEnemy);
+                    EnemyHealth enemyHealthScript = hit.transform.GetComponent<EnemyHealth>();
+                    enemyHealthScript.DeductHealth(damageEnemy);
                 }
                 else
                 {
