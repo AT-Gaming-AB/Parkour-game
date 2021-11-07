@@ -1,0 +1,7 @@
+diff a/.gitignore b/.gitignore	(rejected hunks)
+@@ -58,3 +58,5 @@
+ # Crashlytics generated file
+ crashlytics-build.properties
+ 
++Assets/Tom_s Terrain Tools/Example Data/TerrainExample1.asset
++
