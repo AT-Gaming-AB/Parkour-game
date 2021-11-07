@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pause_menu : MonoBehaviour
 {
@@ -70,5 +71,11 @@ public class pause_menu : MonoBehaviour
     {
         music.volume = value;
     }
-    
+    public void tryAgain()
+    {
+        Debug.Log("bruh");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        Debug.Log(scene.name);
+    }
 }

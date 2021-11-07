@@ -11,7 +11,7 @@ TagManager:
   - wall
   - Ground
   - Enemy
-  - lava
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -21,8 +21,8 @@ TagManager:
   - UI
   - Player Body
   - Ground
+  - Lava
   - Wall
-  - 
   - 
   - 
   - 
