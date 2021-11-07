@@ -5453,7 +5453,7 @@ GameObject:
   - component: {fileID: 563629293}
   m_Layer: 0
   m_Name: lava (2)
-  m_TagString: Untagged
+  m_TagString: lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10157,7 +10157,7 @@ GameObject:
   - component: {fileID: 1291963264}
   m_Layer: 0
   m_Name: lava (1)
-  m_TagString: Untagged
+  m_TagString: lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11872,7 +11872,7 @@ GameObject:
   - component: {fileID: 1994039992}
   m_Layer: 0
   m_Name: lava
-  m_TagString: Untagged
+  m_TagString: lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
