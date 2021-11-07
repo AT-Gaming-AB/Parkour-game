@@ -73,9 +73,7 @@ public class pause_menu : MonoBehaviour
     }
     public void tryAgain()
     {
-        Debug.Log("bruh");
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        Debug.Log(scene.name);
     }
 }
