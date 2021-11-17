@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -231,6 +231,14 @@ PrefabInstance:
     - target: {fileID: 7799156458022761848, guid: ad45d0c9f8bfee141ab05adbe9d2acf1, type: 3}
       propertyPath: m_Name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799156458022761848, guid: ad45d0c9f8bfee141ab05adbe9d2acf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799156458022761849, guid: ad45d0c9f8bfee141ab05adbe9d2acf1, type: 3}
+      propertyPath: m_Volume
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7799156458022761850, guid: ad45d0c9f8bfee141ab05adbe9d2acf1, type: 3}
       propertyPath: m_RootOrder
@@ -1176,6 +1184,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7938589985412605144, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512914184}
+    - target: {fileID: 7938589985412605144, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showsettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589985730806843, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512914184}
+    - target: {fileID: 7938589985730806843, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: quitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589986257013444, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512914184}
+    - target: {fileID: 7938589986257013444, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showsettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589986550303360, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589986848822573, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7938589986971344618, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1267,6 +1307,66 @@ PrefabInstance:
     - target: {fileID: 7938589986989377769, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512914184}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1868340812}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987008878198, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987272056139, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512914184}
+    - target: {fileID: 7938589987272056139, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938589987510988074, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c15f66dc3ef4fdb4e9be7fbd94519d50, type: 3}
@@ -2228,6 +2328,10 @@ PrefabInstance:
       propertyPath: youdiedText
       value: 
       objectReference: {fileID: 1467810116}
+    - target: {fileID: 5796186858989530953, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
+      propertyPath: playerHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5796186858989530953, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
       propertyPath: youDiedCamera
       value: 

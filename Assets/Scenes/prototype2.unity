@@ -10048,6 +10048,18 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1110895284}
+    - target: {fileID: 5796186858989530953, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
+      propertyPath: tmpHealth
+      value: 
+      objectReference: {fileID: 567612868}
+    - target: {fileID: 5796186858989530953, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
+      propertyPath: youdiedText
+      value: 
+      objectReference: {fileID: 1363313625}
+    - target: {fileID: 5796186858989530953, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
+      propertyPath: youDiedCamera
+      value: 
+      objectReference: {fileID: 66210253}
     - target: {fileID: 8371775196685827822, guid: 7d5af7686ec47ee41ba3471f1af4a688, type: 3}
       propertyPath: m_IsActive
       value: 0
