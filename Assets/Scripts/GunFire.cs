@@ -67,9 +67,12 @@ public class GunFire : MonoBehaviour
                 Destroy(newHole, 5f);
                 if(hit.transform.tag == "Enemy")
                 {
-                    Debug.Log("Enemy Hit");
-                    EnemyHealth enemyHealthScript = hit.transform.GetComponent<EnemyHealth>();
-                    enemyHealthScript.DeductHealth(damageEnemy);
+                    EnemyHit();
+                }
+                else if (hit.transform.tag == "Target") 
+                {
+                    GameObject HitGameObject = hit.transform.gameObject;
+                    TargetHit(HitGameObject);
                 }
                 else
                 {
@@ -86,5 +89,17 @@ public class GunFire : MonoBehaviour
     private void StopAudio()
     {
         Reload.Stop();
+    }
+
+    private void EnemyHit()
+    {
+        Debug.Log("Enemy Hit");
+        EnemyHealth enemyHealthScript = hit.transform.GetComponent<EnemyHealth>();
+        enemyHealthScript.DeductHealth(damageEnemy);
+    }
+    private void TargetHit(GameObject hit)
+    {
+        Debug.Log("Target Hit");
+        Destroy(hit.transform.parent.gameObject);
     }
 }

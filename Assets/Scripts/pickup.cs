@@ -6,7 +6,7 @@ public class pickup : MonoBehaviour
 {
     public GameObject gun;
     public GameObject text;
-    public GameObject canvas; 
+    public GameObject canvasHUD; 
     public timerScript timer;
      void Start()
      {
@@ -23,7 +23,7 @@ public class pickup : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
-            canvas.SetActive(true);
+            canvasHUD.SetActive(true);
             text.SetActive(true);
             timer.StartCoroutine(LateCall(5));
             gun.SetActive(true);
