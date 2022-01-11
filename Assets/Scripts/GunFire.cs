@@ -21,13 +21,13 @@ public class GunFire : MonoBehaviour
     public float firerate = 0.5f;
     public float damageEnemy = 40f;
     [HideInInspector] public bool gamePaused;
-
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         currentAmmo = ammoCount;
-        ammoText.text = "ammo: " + ammoCount; 
+        ammoText.gameObject.SetActive(true);
+        ammoText.text = "ammo: " + ammoCount;
     }
 
     // Update is called once per frame

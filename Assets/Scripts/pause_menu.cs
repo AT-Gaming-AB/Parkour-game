@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class pause_menu : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class pause_menu : MonoBehaviour
     GunFire gunScript;
     public GameObject settingsmenu;
     public GameObject mainmenu;
+    public Text title;
+    public Text newGameText;
     public AudioSource music;
+    private Scene scene;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,13 @@ public class pause_menu : MonoBehaviour
         pause.SetActive(false);
         gunScript = gun.GetComponent<GunFire>();
         gunScript.gamePaused = false;
+        scene = SceneManager.GetActiveScene();
+        title.text = scene.name;
+        if (scene.name != "Main Island")
+        {
+            newGameText.text = "Restart";
+        }
+
     }
     // Update is called once per frame
     void Update()
@@ -73,7 +83,7 @@ public class pause_menu : MonoBehaviour
     }
     public void tryAgain()
     {
-        Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1;
     }
 }
