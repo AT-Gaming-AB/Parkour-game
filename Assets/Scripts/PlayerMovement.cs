@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int level = 1;
     public CharacterController controller;
     public Transform trans;
 
