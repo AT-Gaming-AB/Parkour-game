@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float JumpsInAir = 1;
 
     public bool godmode = false;
-    // float godmodeY = 1;
+    float godmodeY = 1;
 
     public Transform groundCheck;
     public float groundDistance = 0.1f;
@@ -89,16 +89,17 @@ public class PlayerMovement : MonoBehaviour
                 restart.restart();
             }
         }
-
-        // if (Input.GetKeyDown(KeyCode.Y))
-        // {
-        //     godmode = !godmode;
-        // }
-        // else if (Input.GetKeyUp(KeyCode.Y))
-        // {
-        //     gravity = -29.46f;
-        //     speed = walkSpeed;
-        // }
+        if (Input.GetKey(KeyCode.G))
+        {
+            godmode = true;
+        }
+        if (!Input.GetKey(KeyCode.G))
+        {
+            godmode = false;
+            gravity = -29.46f;
+            speed = walkSpeed;
+        }
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         if (isGrounded && velocity.y < 0)
