@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask Walls;
     public LayerMask climableWalls;
 
-    
     public Vector3 velocity;
     bool isGrounded;
     private Animator animator;
@@ -91,13 +90,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.G))
         {
-            godmode = true;
-        }
-        if (!Input.GetKey(KeyCode.G))
-        {
-            godmode = false;
-            gravity = -29.46f;
-            speed = walkSpeed;
+            godmode = !godmode;
+            if (godmode == false) {
+                gravity = -29.46f;
+                speed = walkSpeed;
+            }
         }
         
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
