@@ -258,7 +258,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58868
+  m_Name: pb_Mesh67934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -713,7 +713,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58830
+  m_Name: pb_Mesh67896
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1287,7 +1287,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58804
+  m_Name: pb_Mesh67870
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1779,7 +1779,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58964
+  m_Name: pb_Mesh68030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1951,6 +1951,7 @@ GameObject:
   - component: {fileID: 1007913379}
   - component: {fileID: 1007913378}
   - component: {fileID: 1007913383}
+  - component: {fileID: 1007913384}
   m_Layer: 0
   m_Name: portal2
   m_TagString: port2
@@ -2749,6 +2750,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 9, z: 1}
   m_Center: {x: 5, y: 4.5, z: -0.5}
+--- !u!114 &1007913384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007913377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763698082419e1746bb8608e119670d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalEffect: {fileID: 1468987550}
 --- !u!1 &1029668594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3152,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58882
+  m_Name: pb_Mesh67948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5302,7 +5316,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58916
+  m_Name: pb_Mesh67982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5485,7 +5499,6 @@ GameObject:
   - component: {fileID: 1897908840}
   - component: {fileID: 1897908839}
   - component: {fileID: 1897908845}
-  - component: {fileID: 1897908844}
   m_Layer: 0
   m_Name: portal1
   m_TagString: port1
@@ -6271,18 +6284,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1897908844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897908838}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de53865c0a386804da764305efeb230d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1897908845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7353,8 +7354,9 @@ GameObject:
   - component: {fileID: 1982156797}
   - component: {fileID: 1982156796}
   - component: {fileID: 1982156801}
+  - component: {fileID: 1982156802}
   m_Layer: 0
-  m_Name: small portal
+  m_Name: portal3
   m_TagString: port3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8151,6 +8153,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 9, z: 1}
   m_Center: {x: 5, y: 4.5, z: -0.5}
+--- !u!114 &1982156802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982156795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763698082419e1746bb8608e119670d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalEffect: {fileID: 1029668594}
 --- !u!4 &1998078987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0d092a2b3f072f24f9483dcbe4f6db76, type: 3}

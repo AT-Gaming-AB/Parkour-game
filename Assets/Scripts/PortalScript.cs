@@ -20,6 +20,7 @@ public class PortalScript : MonoBehaviour
         else if (col.tag == "port3")
         {
             Debug.Log("Port3");
+            SceneManager.LoadScene(3);
         }
         else if (col.tag == "port4")
         {

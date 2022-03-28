@@ -22,6 +22,8 @@ public class Finish : MonoBehaviour
 
             Scene scene = SceneManager.GetActiveScene();
             PlayerData data = SaveSystem.loadPlayer();
+            // player.level = 1;
+            // SaveSystem.SavePlayer(player);
             if (scene.buildIndex+1 > data.level)
             {
                 player.level = scene.buildIndex + 1;
